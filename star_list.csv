@@ -1,0 +1,4 @@
+﻿name;sn;texp;tpltype;progid;piname;readmode;status;remarks
+HD95086;100;3500;HR_obs_fpsimult;23A.PNP.LECO;Le Coroller;fast;protected;
+beta_pic;50;1000;HE_obs_objAB;23B.PNP.LECO;Le Coroller;fast;PUBLIC;two planets
+HR8799;100;3500;HR_obs_fpsimult;23B.PNP.LECO;Le Coroller;fast;protected;Four planets !
