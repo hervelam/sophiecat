@@ -1,29 +1,35 @@
-Catalog Generator Module for the SOPHIE Spectrograph
-=====================================================
+Catalog Generator for the SOPHIE Spectrograph Documentation
+===========================================================
 
 This code generates the *.cat file required for the SOPHIE NSTS. It imports the information on the stars directly from SIMBAD.
 
 Requirements
 ------------
 
+|sophiecat| requires Python>=3.7 (e.g. Anaconda to
+get a recent Python if needed).
+
 Required packages:
 
-* `astroquery.simbad`
 * `csv`
-* `chardet`
 * `math`
 * `os`
 * `re`
-* `numpy`
 
-Quick Documentation
--------------------
+How to install
+--------------
 
-To use this module, follow the instructions below:
+To install |sophiecat| in your Python environment, from the git repository::
 
-1. Fill the `star_list.csv` file with your own stars using Excel or any text editor. Make sure to maintain the file format.
+    $ git clone https://github.com/hervelam/sophiecat
+    $ cd sophiecat
+    $ pip install -e .
 
-2. Fill in the following columns for instrumental settings:
+Quickstart
+----------
+
+1. Fill the `star_list.csv` file (see star_list.csv in example directory) with your own stars using Excel or any text editor. 
+Make sure to maintain the file format:
 
    - **texp:** Enter the required exposure time in seconds.
    - **sn:** Enter the required SNR (Signal-to-Noise Ratio)
@@ -39,15 +45,15 @@ To use this module, follow the instructions below:
    - **status:** Choose one of the following options: "public", "protected", or "extended". The default is "protected".
    - **remarks:** You don't need to add a remark, but keep this column in the `star_list` file.
 
-3. Additional columns can be added after the "remarks" column without affecting the catalog generator.
+  Additional columns can be added after the "remarks" column without affecting the catalog generator.
 
-Running the Code
-----------------
+2. Running the Code
 
-To run the code, ensure that the directory contains two files: `star_list.csv` and `masks.csv`. Then execute the following command in the terminal:
+Ensure that the directory contains the file: `star_list.csv`. 
+Execute the following command in the terminal:
 
 ```shell
-> python cat_sophie.py
+> sophiecat star_list.csv
 ```
 
 Authors

@@ -2,12 +2,22 @@ from astroquery.simbad import Simbad
 import csv
 import chardet
 import math
+
 import os
+import inspect
+
 import re
 import numpy as np
 
 # Add author's name
 author_name = "Hervé Le Coroller"
+
+# Obtient le chemin absolu du répertoire du script cat_sophie.py
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construit le chemin absolu du fichier masks.csv
+masks_file_path = os.path.join(script_dir, "masks.csv")
+
 
 def detect_encoding(star_list_file):
     with open(star_list_file, 'rb') as file:
@@ -44,9 +54,8 @@ def format_dec(dec):
     seconds = round(seconds, 2)
     return f"{hours}:{minutes}:{seconds:05.2f}"
 
-
 def find_type_spectral(spectr):
-    with open("masks.csv", "r") as file:
+    with open(masks_file_path, "r") as file:
         masks = {}
         for line in file:
             line = line.strip()
