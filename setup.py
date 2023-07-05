@@ -11,7 +11,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'cat_sophie = cat_sophie.cat_sophie:main'
+            'sophiecat= sophiecat.sophiecat:main'
         ]
     }
 )
